@@ -15,8 +15,9 @@ contract RevertExample {
         balance = initialBalance;
     }
 
-    function withdraw(uint256 amount) public view {
+    function withdraw(uint256 amount) external {
         require(amount <= balance, "Insufficient balance");
+        balance = balance - amount;
     }
 }
 
@@ -27,7 +28,8 @@ contract RequireExample {
         balance = initialBalance;
     }
 
-    function withdraw(uint256 amount) public view {
+    function withdraw(uint256 amount) external {
         require(amount <= balance, "Insufficient balance");
+        balance = balance - amount;
     }
 }
